@@ -32,9 +32,10 @@ class Wordlist:
                 Random seed for PRNG. urandom(32) by
                 default. Will be used to pick words.
         """
-        self._random = Random(urandom(32))
-        self._code_path = wordlist_path / code
+        seed = random_seed or urandom(32)
+        self._random = Random(seed)
 
+        self._code_path = wordlist_path / code
         self._list = None
 
     def _load(self) -> tuple:
