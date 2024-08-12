@@ -1,0 +1,20 @@
+[project]
+name = "phrasegen"
+description = "Dead simple package for generating random Phrases"
+readme = "README.md"
+
+authors = [
+  {name = "NotStatilko", email = "thenonproton@pm.me"}
+]
+dynamic = ["version"]
+license = {file = "LICENSE"}
+keywords = ["Mnemonic", "Phrase"]
+
+[project.urls]
+Repository = "https://github.com/NotStatilko/phrasegen.git"
+
+[tool.setuptools]
+packages = ["phrasegen"]
+
+[tool.setuptools.dynamic]
+version = {attr = "phrasegen.__version__"}
