@@ -41,7 +41,7 @@ class Wordlist:
     def _load(self) -> tuple:
         """Will read text file and load words to RAM"""
         if not self._list:
-            list_ = open(self._code_path).read()
+            list_ = open(self._code_path, encoding='utf-8').read()
             self._list = tuple(list_.split('\n'))
 
         return self._list
