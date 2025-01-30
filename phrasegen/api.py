@@ -6,6 +6,9 @@ from random import Random
 from pathlib import Path
 from typing import Union, Optional
 
+from .defaults import WORDLISTPATH
+
+
 __all__ = ['Wordlist', 'Generator']
 
 
@@ -95,8 +98,7 @@ class Generator:
         print(gen.en.generate(count=8, separator='+'))
     """
     def __init__(self, wordlist_path: Optional[Union[str, Path]] = None):
-        self._wordlist_path = wordlist_path or\
-            Path(__file__).parent / 'wordlist'
+        self._wordlist_path = wordlist_path or WORDLISTPATH
 
         supported_languages = []
         for code in self._wordlist_path.iterdir():
